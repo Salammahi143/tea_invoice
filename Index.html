@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Invoice - Rashid Tea</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <!-- Loader -->
+    <div id="loader">
+        <div class="loader-spinner"></div>
+    </div>
+
+    <!-- Main Container -->
+    <div class="container">
+        <!-- Login Form Section -->
+        <div id="login-section" class="form-section">
+            <h2>Login to Your Account</h2>
+            <form id="login-form">
+                <div class="form-group">
+                    <label for="username">Username:</label>
+                    <input type="text" id="username" name="username" required>
+                </div>
+                <div class="form-group">
+                    <label for="password">Password:</label>
+                    <input type="password" id="password" name="password" required>
+                </div>
+                <button type="submit">Login</button>
+            </form>
+            <p id="login-error" class="error-message">Incorrect username or password. Please try again.</p>
+        </div>
+
+        <!-- Invoice Section (Initially Hidden) -->
+        <div id="invoice-section" class="form-section" style="display:none;">
+            <div class="invoice-container">
+                <header>
+                    <img src="./257554206_2065108120321436_146270950293225313_n.jpg" alt="logo">
+                    <h1 id="company-name" class="clickable">Rashid Tea</h1>
+                    <h2 id="business-type" class="clickable">Supply</h2>
+                    <p><strong>Company:</strong> <span id="company-name-text">Rashid Tea</span></p>
+                    <p><strong>Business Type:</strong> <span id="business-type-text">Tea Supply</span></p>
+                </header>
+
+                <section id="invoice-details">
+                    <h3>Invoice</h3>
+                    <table id="invoice-table">
+                        <thead>
+                            <tr>
+                                <th>Item</th>
+                                <th>Quantity</th>
+                                <th>Price per Unit</th>
+                                <th>Total</th>
+                                <th>Action</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><input type="text" class="item" placeholder="Tea Name"></td>
+                                <td><input type="number" class="quantity" value="1" min="1"></td>
+                                <td><input type="number" class="price" value="10.00" min="0" step="0.01"></td>
+                                <td><span class="total-price">10.00</span></td>
+                                <td><button class="remove-item">Remove</button></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <button id="add-item">Add Item</button>
+                </section>
+
+                <section id="invoice-summary">
+                    <h3>Summary</h3>
+                    <p><strong>Subtotal:</strong> <span id="subtotal">৳ 10.00</span></p>
+                    <p><strong>Total:</strong> <span id="total">৳ 10.00</span></p>
+                </section>
+
+                <button id="generate-invoice">Generate Invoice</button>
+                <!-- Print Invoice Button -->
+                <button id="print-invoice">Print Invoice</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
